@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/nemogoc/awdbc-warbler-server/issues"
   },
-  "homepage": "https://github.com/nemogoc/awdbc-warbler-server#readme"
+  "homepage": "https://github.com/nemogoc/awdbc-warbler-server#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.9"
+  }
 }
