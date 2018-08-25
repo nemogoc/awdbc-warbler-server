@@ -1,0 +1,19 @@
+{
+  "name": "awdbc-warbler-server",
+  "version": "1.0.0",
+  "description": "Server section of the basic Twitter clone final project for awdbc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nemogoc/awdbc-warbler-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nemogoc/awdbc-warbler-server/issues"
+  },
+  "homepage": "https://github.com/nemogoc/awdbc-warbler-server#readme"
+}
