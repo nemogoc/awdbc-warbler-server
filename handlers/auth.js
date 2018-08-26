@@ -16,6 +16,7 @@ exports.signup = async function(req, res, next){
     return res.status(200).json({
       id,
       username,
+      profileImageUrl,
       token
     });
     //create a user
