@@ -4,7 +4,8 @@ const express = require("express"),
   cors = require("cors"),
   bodyParser = require("body-parser"),
   errorHandler = require("./handlers/error"),
-  authRoutes = require("./routes/auth");
+  authRoutes = require("./routes/auth"),
+  messagesRoutes = require("./routes/messages");
 
 const PORT = 8081;
 
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 
 //routes go here
 app.use("/api/auth", authRoutes); //<base>/api/auth/<anything> uses routes in authRoutes
+app.use("/api/users/:id/messages", messagesRoutes);
 
 //error handling if no routes match
 app.use(function(req,res,next){

@@ -18,7 +18,11 @@ const userSchema = new mongoose.Schema({
   },
   profileImageUrl: {
     type: String
-  }
+  },
+  messages: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Message"
+  }]
 });
 
 //use hook to hash password before saving user to db
