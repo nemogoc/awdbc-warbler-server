@@ -1,6 +1,6 @@
 const db = require("../models");
 
-exports.createMessage = async function(req, res, next){
+exports.createMessage = async function (req, res, next) {
   try {
     let message = await db.Message.create({
       text: req.body.text,
@@ -17,11 +17,34 @@ exports.createMessage = async function(req, res, next){
     });
     return res.status(200).json(foundMessage);
   }
-  catch(err){
+  catch (err) {
     return next(err);
   }
 };
 
-exports.getMessage = async function(req, res, next){};
+exports.getMessage = async function (req, res, next) {
+  try { //TODO: is it find() instead of findById?
+    let foundMessage = await db.Message.findById(req.params.messageId).populate("user", {
+      username: true,
+      profileImageUrl: true
+    });
+    return res.status(200).json(foundMessage);
+  }
+  catch (err) {
+    return next(err);
+  }
+};
 
-exports.deleteMessage = async function(req, res, next){};
+exports.deleteMessage = async function (req, res, next) {
+  try {
+    let foundMessage = await db.Message.findById(req.params.messageId);
+
+    //can't use findByIdAndRemove because of remove hook in schema
+    await foundMessage.remove();
+
+    return res.status(200).json(foundMessage);
+  }
+  catch(err){
+
+  }
+};
