@@ -23,7 +23,7 @@ exports.createMessage = async function (req, res, next) {
 };
 
 exports.getMessage = async function (req, res, next) {
-  try { //TODO: is it find() instead of findById?
+  try { //I used findById instead of find here
     let foundMessage = await db.Message.findById(req.params.messageId).populate("user", {
       username: true,
       profileImageUrl: true
