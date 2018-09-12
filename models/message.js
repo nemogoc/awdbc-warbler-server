@@ -1,5 +1,5 @@
 const mongoose = require("mongoose"),
-  user = require("./user");
+  User = require("./user");
 
 const messageSchema = new mongoose.Schema({
     text: {
